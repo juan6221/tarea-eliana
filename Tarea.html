@@ -4,7 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repaso JavaScript</title>
-    <link rel="stylesheet" href="Styles.css">
+    
+    <!-- ESTILOS INTEGRADOS -->
+    <style>
+        /* RESET BÁSICO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .nave-link {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin-right: 20px;
+        }
+
+        .nave-link li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nave-link li a:hover {
+            color: #00bcd4;
+        }
+
+        /* MAIN */
+        main {
+            background-color: #fff;
+            padding: 40px 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #00796b;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .conceptos {
+            margin-top: 30px;
+        }
+
+        .concepto {
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,7 +100,7 @@
             <nav>
                 <div class="logo">Repaso JS</div>
                 <ul class="nave-link">
-                    <li><a href="">Inicio</a></li>
+                    <li><a href="C:\Users\Juanjo\Desktop\Repaso JS_Eliana\tarea\Tarea.html">Inicio</a></li>
                     <li><a href="C:\Users\Juanjo\Desktop\Repaso JS_Eliana\Funciones\Index.html">Funciones</a></li>
                     <li><a href="C:\Users\Juanjo\Desktop\Repaso JS_Eliana\funcion_flecha\Funcion_flecha.html">Función flecha</a></li>
                     <li><a href="C:\Users\Juanjo\Desktop\Repaso JS_Eliana\callback\index.html">Callback</a></li>
@@ -50,6 +138,14 @@
                     <p>Las promesas representan un valor que puede estar disponible ahora, en el futuro o nunca. Proporcionan una mejor manera de manejar operaciones asíncronas comparado con los callbacks tradicionales, evitando el "callback hell".</p>
                 </article>
             </section>
+
+            <!-- Ejemplo interactivo -->
+            <section class="seccion">
+                <h2>Probar Función de Mostrar Texto</h2>
+                <input type="text" id="miInput" placeholder="Escribir algo aquí...">
+                <button onclick="mostrarTexto()">Mostrar</button>
+                <p id="resultado"></p>
+            </section>
         </div>
     </main>
 
@@ -60,6 +156,19 @@
         </div>
     </footer>
 
-    <script src="Script.js"></script>
+    <!-- SCRIPT INTEGRADO -->
+    <script>
+        function mostrar(id) {
+            const secciones = document.querySelectorAll('.seccion');
+            secciones.forEach(sec => sec.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function mostrarTexto() {
+            const input = document.getElementById('miInput');
+            const resultado = document.getElementById('resultado');
+            resultado.textContent = input.value;
+        }
+    </script>
 </body>
 </html>
